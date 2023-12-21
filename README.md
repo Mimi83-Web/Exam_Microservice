@@ -31,3 +31,5 @@ kubectl expose deployment counterjs-deployment --type=NodePort --name=counterjs-
 
 ![image](https://github.com/Mimi83-Web/Exam_Microservice/assets/80813713/8b259102-b98c-4c0a-9077-c27ca7adc2d1)
 
+![image](https://github.com/Mimi83-Web/Exam_Microservice/assets/80813713/f37150b1-e611-4479-a363-3d884d561e44)
+
