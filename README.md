@@ -24,4 +24,6 @@ kubectl apply -f fichier_deployment.yaml
 
 kubectl expose deployment counterjs-deployment --type=NodePort --name=counterjs-service --port=8080
 
-![Alt text](image.png)
+![image](https://github.com/Mimi83-Web/Exam_Microservice/assets/80813713/0e2d3108-961a-466a-b81e-b474d4b19489)
+
+
