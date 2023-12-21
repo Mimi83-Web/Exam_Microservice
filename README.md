@@ -1,14 +1,5 @@
-# Simple NodeJS Webapp
+## RASTAD Milena M1_EXAM
 
-The application uses an environment variable `APPLICATION_INSTANCE`.  
-This variable will be used by the application to listen on a specific path (i.e. `/${application_instance}/health`).
-
-## Launch the application:
-
-```bash
-export APPLICATION_INSTANCE=example
-node src/count-server.js
-```
 ## Command I did to deploy the app via docker and k8s
 
 docker build -t my-counterjs-app .
@@ -33,4 +24,6 @@ kubectl expose deployment counterjs-deployment --type=NodePort --name=counterjs-
 ![image](https://github.com/Mimi83-Web/Exam_Microservice/assets/80813713/8b259102-b98c-4c0a-9077-c27ca7adc2d1)
 
 ![image](https://github.com/Mimi83-Web/Exam_Microservice/assets/80813713/f37150b1-e611-4479-a363-3d884d561e44)
+
+![image](https://github.com/Mimi83-Web/Exam_Microservice/assets/80813713/00014e28-2de9-45ed-b0a0-e4ad13979feb)
 
