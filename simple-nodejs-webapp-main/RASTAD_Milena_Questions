@@ -1,1 +1,76 @@
+Q1:
 
+Microservices architecture is a method of developing a single application as a set of small, independent services, each running in its own process and communicating typically via HTTP-based APIs. 
+These services are organized around specific business capabilities and can be deployed independently using automated systems.
+
+In contrast, a monolithic application is built as a single unified unit. In a monolithic architecture, all components of the application are tightly integrated and interdependent. 
+Updating or scaling a part of the application often requires rebuilding and redeploying the entire application.
+
+Q2:
+
+Microservices Pros:
+Scalability: Individual services can be scaled as needed.
+Flexibility: Allows for using different technologies for different services.
+Agility: Easier management due to smaller, more manageable codebases.
+Resilience: Failures in one service have limited impact on the entire application.
+
+Microservices Cons:
+Complexity: Increased complexity due to multiple services.
+Distributed System Challenges: Includes issues like network latency and message serialization.
+Data Integrity: Difficulties in maintaining consistent data across services.
+Operational Overhead: Increased need for robust operations, monitoring, and logging systems.
+
+Monolithic Pros:
+Simplicity: Straightforward to develop, test, deploy, and initially scale.
+Performance: Faster intra-process communication.
+Transaction Management: Simpler within a single database context.
+
+Monolithic Cons:
+Scalability: Scaling requires scaling the entire application.
+Flexibility: Limited to a single technology stack.
+Agility: Large codebases become difficult to manage.
+Resilience: A single module's failure can affect the entire application.
+
+Q3:
+
+In microservices architecture, applications should be divided based on business domain boundaries, aligning with the principles of Domain-Driven Design (DDD). 
+This division ensures that each microservice encapsulates a specific core business capability (1 domain = 1 bounded countext).
+
+Q4:
+
+The CAP theorem posits that a distributed system cannot simultaneously achieve Consistency, Availability, and Partition Tolerance at the same time. In the context of microservices:
+
+Consistency: Every read operation receives the most recent write or an error.
+Availability: Every request receives a response, but not necessarily the most recent data.
+Partition Tolerance: The system continues to operate despite network failures.
+
+This theorem is guides the balance and trade-offs between these three aspects based on specific business requirements.
+
+Q5:
+
+Due to the CAP theorem, microservices architecture must make strategic trade-offs, influencing its design. 
+For example, prioritizing consistency may lead to a system that sacrifices availability, using traditional transactional mechanisms. 
+Conversely, prioritizing availability may lead to eventual consistency, offering a responsive user experience at the expense of having the most up-to-date data.
+
+Q6:
+
+Microservices enhance scalability in cloud environments by allowing individual services to be scaled separately. 
+For instance, in a high-demand scenario for an e-commerce platform's payment processing service, only the payment service can be scaled up by 
+deploying more instances on additional cloud resources, without needing to scale the entire application.
+
+Q7:
+
+Statelessness in microservices refers to the principle where each request from a client contains all necessary information to process that request. 
+This approach is crucial in microservices for enabling independent scalability and redeployment of services, as there's no need for shared state between instances. 
+It also enhances system resilience, as any service instance can process any request at any time.
+
+Q8: 
+
+An API Gateway serves as the entry point for clients accessing microservices, performing several key functions:
+
+Request Routing: Directing incoming requests to the appropriate microservices.
+Aggregation: Combining responses from various services for the client.
+Authentication and Authorization: Ensuring security of requests.
+Rate Limiting: Controlling the number of requests from users.
+Load Balancing: Distributing incoming traffic across service instances.
+Logging and Metrics: Gathering traffic and performance data for analysis.
