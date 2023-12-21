@@ -12,6 +12,7 @@ node src/count-server.js
 ## Command I did to deploy the app via docker and k8s
 
 docker build -t my-counterjs-app .
+
 docker run -p 8080:8080 my-counterjs-app
 
 docker login
