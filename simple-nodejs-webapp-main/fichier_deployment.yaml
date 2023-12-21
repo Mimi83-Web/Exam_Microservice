@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: counterjs-deployment
+  labels:
+    app: counterjs
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: counterjs
+  template:
+    metadata:
+      labels:
+        app: counterjs
+    spec:
+      containers:
+      - name: counterjs-app
+        image: mimi83web/my-counterjs-app:1.0.0
+        ports:
+        - containerPort: 8080
+        env:
+        - name: APPLICATION_INSTANCE
+          value: "example"
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        livenessProbe:
+          httpGet:
+            path: /example/health
+            port: 8080
+          initialDelaySeconds: 3
+          periodSeconds: 3
+        readinessProbe:
+          httpGet:
+            path: /example/health
+            port: 8080
+          initialDelaySeconds: 5
+          periodSeconds: 5

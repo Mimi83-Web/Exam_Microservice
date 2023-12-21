@@ -1,0 +1,59 @@
+Q1: Define what is a Microservices architecture and how does it differ from a Monolithic application.
+
+Microservices architecture is a design approach to build a single application as a suite of small services, each running in its own process and communicating with lightweight mechanisms, often an HTTP-based API. Each service is built around a specific business capability and is independently deployable by fully automated deployment machinery.
+
+In contrast, a monolithic application is built as a single, indivisible unit. All components of the program are interconnected and interdependent. If one component needs to be updated, the whole application might need to be rebuilt and redeployed.
+
+Q2: Compare Microservices and Monolithic architectures by listing their respective pros and cons.
+Pros of Microservices:
+- Scalability: Services can be scaled independently.
+- Flexibility: Different technologies can be used for different services.
+- Agility: Smaller codebases and services are easier to manage.
+- Resilience: Failure in one service doesn't impact the entire application.
+
+Cons of Microservices:
+- Complexity: The architecture can become complex due to the number of services.
+- Distributed System Challenges: Issues such as network latency, message serialization, unreliable networks, asynchronicity.
+- Data Integrity: Maintaining data consistency can be challenging.
+- Operational Overhead: Requires robust operations, monitoring, and logging.
+
+Pros of Monolithic:
+- Simplicity: Easier to develop, test, deploy, and scale initially.
+- Performance: Intra-process communication can be faster than inter-process communication.
+- Transaction management: Easier to implement within a single database context.
+
+Cons of Monolithic:
+- Scalability: The whole application needs to be scaled even if only one part requires more resources.
+- Flexibility: Limited to using the same technology stack throughout the application.
+- Agility: Large codebases can be cumbersome to manage.
+- Resilience: A bug in any module can potentially bring down the entire process.
+
+Q3: In a Microservices architecture, explain how should the application be split and why.
+
+In microservices architecture, an application should be split along business domain boundaries, a principle known as Domain-Driven Design (DDD). This means that each service should encapsulate a core business capability. This approach ensures that the services are loosely coupled and can be developed, deployed, and scaled independently.
+
+Q4: Briefly explain the CAP theorem and its relevance to distributed systems and Microservices.
+The CAP theorem states that a distributed computer system cannot simultaneously guarantee all three of the following:
+- Consistency (C): Every read receives the most recent write or an error.
+- Availability (A): Every request receives a (non-error) response, without the guarantee that it contains the most recent write.
+- Partition Tolerance (P): The system continues to operate despite an arbitrary number of messages being dropped or delayed by the network between nodes.
+
+In the context of microservices, this theorem is relevant because it informs the design and trade-offs of distributed services. Microservices often require decisions about which of these three guarantees are most important and how to balance them based on business needs.
+
+Q5: What consequences on the architecture?
+Adhering to the CAP theorem, microservices architecture must make trade-offs which affect its design. For instance, if a system prioritizes consistency, it might sacrifice availability, resulting in a more traditional, transactional system that locks records for updates. If availability is prioritized, the system might use eventual consistency, allowing for a more fluid and responsive user experience at the cost of always having the most current data.
+
+Q6: Provide an example of how microservices can enhance scalability in a cloud environment.
+In a cloud environment, microservices can be individually scaled by deploying more instances of a service that is under high demand, rather than scaling the entire application as in a monolithic design. For example, if an e-commerce application experiences high demand in its payment processing service during a sale, more instances of just the payment service can be deployed across additional servers or cloud resources to handle the load.
+
+Q7: What is statelessness and why is it important in microservices architecture?
+Statelessness means that each request from a client to a server must contain all the information needed to understand and process the request. In microservices, statelessness allows each service to be independently scalable and redeployable, as there is no stored state that must be replicated or maintained across instances. This also improves resilience, as any instance can handle any request at any time.
+
+Q8: What purposes does an API Gateway serve?
+An API Gateway is a server that acts as an entry point for clients accessing microservices. It provides several important functions:
+- Request Routing: Directs incoming requests to the appropriate microservices.
+- Aggregation: Combines responses from various services and sends them as a unified response to the client.
+- Authentication and Authorization: Ensures that the incoming requests are from authenticated and authorized users.
+- Rate Limiting: Prevents overuse of resources by limiting the number of requests a user can send in a given timeframe.
+- Load Balancing: Distributes incoming requests across multiple instances of a microservice.
+- Logging and Metrics: Collects data on traffic and performance for monitoring and analytics.

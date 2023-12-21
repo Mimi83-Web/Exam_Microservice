@@ -1,0 +1,11 @@
+FROM node:16
+
+WORKDIR /usr/src/app
+
+COPY . .
+
+ENV APPLICATION_INSTANCE=example
+
+EXPOSE 8080
+
+CMD ["node", "src/count-server.js"]
