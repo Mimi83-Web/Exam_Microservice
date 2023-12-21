@@ -9,7 +9,7 @@ This variable will be used by the application to listen on a specific path (i.e.
 export APPLICATION_INSTANCE=example
 node src/count-server.js
 ```
-## Command I did to deploy the ap via docker and k8s
+## Command I did to deploy the app via docker and k8s
 
 docker build -t my-counterjs-app .
 docker run -p 8080:8080 my-counterjs-app
