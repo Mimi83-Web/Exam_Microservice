@@ -9,7 +9,7 @@ This variable will be used by the application to listen on a specific path (i.e.
 export APPLICATION_INSTANCE=example
 node src/count-server.js
 ```
-
+## Command I did to deploy the ap via docker and k8s
 
 docker build -t my-counterjs-app .
 docker run -p 8080:8080 my-counterjs-app
@@ -19,6 +19,9 @@ docker login
 docker tag my-counterjs-app mimi83web/my-counterjs-app:1.0.0
 
 docker push mimi83web/my-counterjs-app:1.0.0
+
+![image](https://github.com/Mimi83-Web/Exam_Microservice/assets/80813713/3d977fe7-543f-4ed5-91c7-f529fb0408f4)
+
 
 kubectl apply -f fichier_deployment.yaml
 
